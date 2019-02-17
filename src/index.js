@@ -1,10 +1,18 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { render } from "react-dom";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+import App from "./App";
 
-const App = () => (
-  <div>
-    <h1>Snake 🐍</h1>
-  </div>
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+`;
+
+const AppContainer = () => (
+  <Fragment>
+    <GlobalStyle />
+    <App />
+  </Fragment>
 );
 
-render(<App />, document.getElementById("🐍"));
+render(<AppContainer />, document.getElementById("🐍"));
