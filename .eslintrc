@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "babel"
+  ],
+  "extends": ["plugin:prettier/recommended"],
+  "rules": {
+    "babel/semi": 1
+  }
+}
