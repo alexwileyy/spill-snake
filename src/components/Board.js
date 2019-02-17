@@ -1,12 +1,8 @@
 import React from "react";
 import { Grid, Snake } from "./Board.style";
 
-const Board = ({ snakePosition }) => (
-  <Grid>
-    {snakePosition.map((cell, i) => (
-      <Snake snakePosition={cell} key={i} />
-    ))}
-  </Grid>
+const Board = ({ snakePosition, size, children }) => (
+  <Grid size={size}>{children}</Grid>
 );
 
 export default Board;
