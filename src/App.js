@@ -19,14 +19,15 @@ class App extends Component {
   };
   size = 30;
 
-  // functionality goes here
-  // snake and food components have been made just need to render them
+  // write your functions here
 
   render() {
     return (
       <Container>
         <h1>🐍</h1>
-        <Board size={this.size}>{/* render comps here */}</Board>
+        <Board size={this.size}>
+          {/* render snake and food components here */}
+        </Board>
       </Container>
     );
   }
