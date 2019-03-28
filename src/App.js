@@ -26,7 +26,10 @@ class App extends Component {
       <Container>
         <h1>🐍</h1>
         <Board size={this.size}>
-          {/* render snake and food components here */}
+          {this.state.snakeCoordinates.map((position, i) => (
+            <SnakeCell key={i} position={position} />
+          ))}
+          {/* render food here */}
         </Board>
       </Container>
     );
