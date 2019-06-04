@@ -32888,7 +32888,8 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "moveSnake", function () {
-      // Clone the snake for state to avoid mutation
+      var direction = _this.state.direction; // Clone the snake for state to avoid mutation
+
       var snake = _this.state.snakeCoordinates.slice().map(function (block) {
         return _objectSpread({}, block);
       }); // Clone the head of the snake
@@ -32896,7 +32897,7 @@ function (_Component) {
 
       var startOfSnake = Object.assign({}, snake[0]); // Switch based on the direction of the snake
 
-      switch (_this.state.direction) {
+      switch (direction) {
         case "up":
           // Decrease Y value by 1
           startOfSnake.y--; // Handle snake reaching edge of box
@@ -33090,33 +33091,41 @@ function (_Component) {
         switch (e.code) {
           case "ArrowDown":
             // Set direction to down
-            _this2.setState({
-              direction: "down"
-            });
+            if (_this2.state.direction !== "up") {
+              _this2.setState({
+                direction: "down"
+              });
+            }
 
             break;
 
           case "ArrowRight":
             // Set direction to up
-            _this2.setState({
-              direction: "right"
-            });
+            if (_this2.state.direction !== "left") {
+              _this2.setState({
+                direction: "right"
+              });
+            }
 
             break;
 
           case "ArrowLeft":
             // Set direction to left
-            _this2.setState({
-              direction: "left"
-            });
+            if (_this2.state.direction !== "right") {
+              _this2.setState({
+                direction: "left"
+              });
+            }
 
             break;
 
           case "ArrowUp":
             // Set direction to up
-            _this2.setState({
-              direction: "up"
-            });
+            if (_this2.state.direction !== "down") {
+              _this2.setState({
+                direction: "up"
+              });
+            }
 
             break;
         }
@@ -33242,7 +33251,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64978" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55987" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
