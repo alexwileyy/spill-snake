@@ -1,0 +1,9 @@
+html, body{
+    font-family: 'Heebo', sans-serif !important;
+    background-color: #041549;
+}
+
+.left{
+    background-color: #041549;
+    width: 45%
+}

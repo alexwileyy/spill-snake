@@ -6,5 +6,5 @@ export const FoodCell = styled.span`
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: rgb(254, 218, 136);
 `;
