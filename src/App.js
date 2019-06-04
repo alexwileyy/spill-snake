@@ -89,19 +89,27 @@ class App extends Component {
       switch (e.code) {
         case "ArrowDown":
           // Set direction to down
-          this.setState({direction: "down"});
+          if(this.state.direction !== "up") {
+            this.setState({direction: "down"});
+          }
           break;
         case "ArrowRight":
           // Set direction to up
-          this.setState({direction: "right"});
+          if(this.state.direction !== "left") {
+            this.setState({direction: "right"});
+          }
           break;
         case "ArrowLeft":
           // Set direction to left
-          this.setState({ direction: "left" });
+          if(this.state.direction !== "right") {
+            this.setState({ direction: "left" });
+          }
           break;
         case "ArrowUp":
           // Set direction to up
-          this.setState({direction: "up"});
+          if(this.state.direction !== "down") {
+            this.setState({direction: "up"});
+          }
           break;
       }
     }
@@ -204,12 +212,13 @@ class App extends Component {
    * Performs the movement of the snake
    */
   moveSnake = () => {
+    const direction = this.state.direction;
     // Clone the snake for state to avoid mutation
     let snake = this.state.snakeCoordinates.slice().map(block => ({...block}));
     // Clone the head of the snake
     const startOfSnake = Object.assign({}, snake[0]);
     // Switch based on the direction of the snake
-    switch (this.state.direction) {
+    switch (direction) {
       case "up":
         // Decrease Y value by 1
         startOfSnake.y--;
