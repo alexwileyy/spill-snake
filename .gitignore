@@ -61,7 +61,7 @@ typings/
 .next
 
 # build files
-dist/
+
 build/
 
 # cache
